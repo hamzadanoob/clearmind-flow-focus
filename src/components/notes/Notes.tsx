@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Search, Plus, Notes as NotesIcon } from 'lucide-react';
+import { Search, Plus, FileText } from 'lucide-react';
 
 interface Note {
   id: string;
@@ -152,7 +152,7 @@ export const Notes = () => {
             </Card>
           ) : (
             <Card className="p-12 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm border-white/20 dark:border-slate-700/20 text-center">
-              <NotesIcon className="w-16 h-16 mx-auto text-slate-400 mb-4" />
+              <FileText className="w-16 h-16 mx-auto text-slate-400 mb-4" />
               <p className="text-slate-600 dark:text-slate-400">
                 Select a note to start editing or create a new one
               </p>

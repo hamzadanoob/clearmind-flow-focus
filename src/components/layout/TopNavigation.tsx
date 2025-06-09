@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { settings } from 'lucide-react';
+import { Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export const TopNavigation = () => {
@@ -34,7 +34,7 @@ export const TopNavigation = () => {
           </Button>
           
           <Button variant="ghost" size="sm">
-            <settings className="w-4 h-4" />
+            <Settings className="w-4 h-4" />
           </Button>
           
           <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-blue-500 rounded-full flex items-center justify-center">

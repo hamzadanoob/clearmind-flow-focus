@@ -1,5 +1,5 @@
 
-import { Circle, Square, Timer, Journal, Notes, Expenses, Target, Menu } from 'lucide-react';
+import { Circle, Square, Timer, BookOpen, FileText, DollarSign, Target, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 
@@ -15,9 +15,9 @@ export const Sidebar = ({ activeView, setActiveView, collapsed, setCollapsed }: 
     { id: 'dashboard', label: 'Dashboard', icon: Circle },
     { id: 'matrix', label: 'Priority Matrix', icon: Square },
     { id: 'focus', label: 'Focus Mode', icon: Timer },
-    { id: 'journal', label: 'Journal', icon: Journal },
-    { id: 'notes', label: 'Notes', icon: Notes },
-    { id: 'expenses', label: 'Expenses', icon: Expenses },
+    { id: 'journal', label: 'Journal', icon: BookOpen },
+    { id: 'notes', label: 'Notes', icon: FileText },
+    { id: 'expenses', label: 'Expenses', icon: DollarSign },
   ];
 
   return (
