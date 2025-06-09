@@ -3,11 +3,15 @@ import { useState } from 'react';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { TopNavigation } from '@/components/layout/TopNavigation';
 import { Dashboard } from '@/components/dashboard/Dashboard';
+import { GoalConsole } from '@/components/goals/GoalConsole';
 import { EisenhowerMatrix } from '@/components/matrix/EisenhowerMatrix';
 import { FocusMode } from '@/components/focus/FocusMode';
 import { Journal } from '@/components/journal/Journal';
 import { Notes } from '@/components/notes/Notes';
+import { NamajTracker } from '@/components/namaj/NamajTracker';
 import { Expenses } from '@/components/expenses/Expenses';
+import { TaskHistory } from '@/components/tasks/TaskHistory';
+import { MotivationCards } from '@/components/motivation/MotivationCards';
 import { Analytics } from '@/components/analytics/Analytics';
 
 const Index = () => {
@@ -16,6 +20,8 @@ const Index = () => {
 
   const renderActiveView = () => {
     switch (activeView) {
+      case 'goals':
+        return <GoalConsole />;
       case 'matrix':
         return <EisenhowerMatrix />;
       case 'focus':
@@ -24,8 +30,14 @@ const Index = () => {
         return <Journal />;
       case 'notes':
         return <Notes />;
+      case 'namaj':
+        return <NamajTracker />;
       case 'expenses':
         return <Expenses />;
+      case 'history':
+        return <TaskHistory />;
+      case 'motivation':
+        return <MotivationCards />;
       case 'analytics':
         return <Analytics />;
       default:

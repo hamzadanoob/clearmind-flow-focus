@@ -1,5 +1,4 @@
-
-import { Circle, Square, Timer, BookOpen, FileText, DollarSign, Target, Menu } from 'lucide-react';
+import { Circle, Square, Timer, BookOpen, FileText, DollarSign, Target, Menu, History, Lightbulb, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 
@@ -13,11 +12,15 @@ interface SidebarProps {
 export const Sidebar = ({ activeView, setActiveView, collapsed, setCollapsed }: SidebarProps) => {
   const navItems = [
     { id: 'dashboard', label: 'Dashboard', icon: Circle },
+    { id: 'goals', label: 'Goal Console', icon: Target },
     { id: 'matrix', label: 'Priority Matrix', icon: Square },
     { id: 'focus', label: 'Focus Mode', icon: Timer },
     { id: 'journal', label: 'Journal', icon: BookOpen },
     { id: 'notes', label: 'Notes', icon: FileText },
+    { id: 'namaj', label: 'Namaj Tracker', icon: Calendar },
     { id: 'expenses', label: 'Expenses', icon: DollarSign },
+    { id: 'history', label: 'Task History', icon: History },
+    { id: 'motivation', label: 'Motivation', icon: Lightbulb },
   ];
 
   return (
