@@ -1,11 +1,57 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState } from 'react';
+import { Sidebar } from '@/components/layout/Sidebar';
+import { TopNavigation } from '@/components/layout/TopNavigation';
+import { Dashboard } from '@/components/dashboard/Dashboard';
+import { EisenhowerMatrix } from '@/components/matrix/EisenhowerMatrix';
+import { FocusMode } from '@/components/focus/FocusMode';
+import { Journal } from '@/components/journal/Journal';
+import { Notes } from '@/components/notes/Notes';
+import { Expenses } from '@/components/expenses/Expenses';
+import { Analytics } from '@/components/analytics/Analytics';
 
 const Index = () => {
+  const [activeView, setActiveView] = useState('dashboard');
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+
+  const renderActiveView = () => {
+    switch (activeView) {
+      case 'matrix':
+        return <EisenhowerMatrix />;
+      case 'focus':
+        return <FocusMode />;
+      case 'journal':
+        return <Journal />;
+      case 'notes':
+        return <Notes />;
+      case 'expenses':
+        return <Expenses />;
+      case 'analytics':
+        return <Analytics />;
+      default:
+        return <Dashboard />;
+    }
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-blue-950 dark:to-indigo-950">
+      <TopNavigation />
+      
+      <div className="flex">
+        <Sidebar 
+          activeView={activeView}
+          setActiveView={setActiveView}
+          collapsed={sidebarCollapsed}
+          setCollapsed={setSidebarCollapsed}
+        />
+        
+        <main className={`flex-1 p-6 transition-all duration-300 ${
+          sidebarCollapsed ? 'ml-16' : 'ml-64'
+        }`}>
+          <div className="max-w-7xl mx-auto">
+            {renderActiveView()}
+          </div>
+        </main>
       </div>
     </div>
   );
