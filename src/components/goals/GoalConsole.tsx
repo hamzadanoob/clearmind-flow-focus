@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -41,10 +40,14 @@ export const GoalConsole = () => {
     },
   ]);
 
-  const [newGoal, setNewGoal] = useState({
+  const [newGoal, setNewGoal] = useState<{
+    title: string;
+    description: string;
+    type: 'long-term' | 'short-term';
+  }>({
     title: '',
     description: '',
-    type: 'short-term' as const,
+    type: 'short-term',
   });
 
   const [editingGoal, setEditingGoal] = useState<string | null>(null);
